@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   ci:
@@ -14,5 +14,3 @@ jobs:
       - uses: bazelbuild/setup-bazelisk@v3
       - run: bazel build //...
       - run: bazel test //...
-      
-    
