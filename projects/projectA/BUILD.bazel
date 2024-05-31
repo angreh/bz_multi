@@ -1,0 +1,13 @@
+genrule(
+    name = "foo",
+    srcs = [],
+    outs = ["foo.txt"],
+    cmd = "sleep 5 && echo 'Hello World!!!' > $@",
+)
+
+genrule(
+    name = "foo2",
+    srcs = [],
+    outs = ["foo2.txt"],
+    cmd = "sleep 4 && echo 'Hello World!!!' > $@",
+)

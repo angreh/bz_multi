@@ -1,0 +1,45 @@
+load("@pip//:requirements.bzl", "requirement")
+
+py_library(
+    name = "my_python_app_lib",
+    srcs = ["main.py"],
+    deps = [
+        requirement("Flask"),
+        "//projects/calculator:calculator",
+    ],
+)
+
+py_binary(
+    name = "my-python-app",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = [":my_python_app_lib"],
+)
+
+# py_binary(
+#     name = "main",
+#     srcs = ["main.py"],
+#     deps = [
+#         requirement("Flask"),
+#         "//projects/calculator:calculator",
+#     ],
+# )
+
+
+# load("@pip//:requirements.bzl", "requirement")
+
+# py_library(
+#     name = "python_web_lib",
+#     srcs = ["python_web.py"],
+#     deps = [
+#         requirement("Flask"),
+#         "//projects/python_calculator:calculator",
+#     ],
+# )
+
+# py_binary(
+#     name = "python_web",
+#     srcs = ["python_web.py"],
+#     main = "python_web.py",
+#     deps = [":python_web_lib"],
+# )
